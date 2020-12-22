@@ -1,8 +1,11 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+import UserData from './features/user-data/user-data';
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +21,17 @@ function App() {
         >
           Learn React
         </a>
+        <div className="Counter">
+          <p>
+            {counter}
+          </p>
+          <button onClick={() => {
+            setCounter(counter + 1);
+          }}>
+            Increment Counter
+          </button>
+        </div>
+        <UserData></UserData>
       </header>
     </div>
   );
